@@ -3,9 +3,9 @@
 var rate_0 = 
 [
 	{	
-		q : 'Выбрть из массива строки, начинающиеся на букву "F" и отсортировать полученный список.<br /><br />\
-			List<string> list = new List<string>();<br />\
-            list.AddRange(new string[] { "Asya", "Fedya", "Nikolay", "Anna", "Fan" });', 			
+		q : "Выбрть из массива строки, начинающиеся на букву \"F\" и отсортировать полученный список.<br /><br />\\n"+
+			"List<string> list = new List<string>();<br />\\n"+
+            "list.AddRange(new string[] { \"Asya\", \"Fedya\", \"Nikolay\", \"Anna\", \"Fan\" });", 			
 		
 		a : "var x = from n in list<br />\n"+
 			"		 where n.StartsWith(\"F\")\n"+
