@@ -1,0 +1,11 @@
+.quiz, .answer{
+/* 	border:1px solid red; */
+}
+
+.quiz{
+	border-right:1px solid grey;
+}
+
+.showSolution, .hideSolution{
+	margin-bottom: 9px;
+}
