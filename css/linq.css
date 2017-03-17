@@ -3,9 +3,13 @@
 }
 
 .quiz{
-	border-right:1px solid grey;
+	/* border-right:1px solid grey; */
 }
 
-.showSolution, .hideSolution{
-	margin-bottom: 9px;
+.showSolution{
+	margin: 9px 0;
+}
+
+#question, #challenge, #solution{
+	font-family: "Consolas";
 }
