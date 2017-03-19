@@ -19,6 +19,7 @@ $(document).ready(function(){
 
 	var startTraining = function(tasks){
 
+
 		var task_number = Math.floor(Math.random() * tasks.length);
 
 		$('#question').html(tasks[task_number].task);
@@ -40,6 +41,8 @@ $(document).ready(function(){
 			
 			(flag) ? flag = false : flag = true;
 		});
+
+		//tasks.splice(task_number, 1);
 	};
 
 
