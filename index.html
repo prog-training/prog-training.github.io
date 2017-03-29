@@ -13,33 +13,66 @@
 <body>
 	<h1 class="text-center title toRemove">Programming Trainer</h1>
 	<hr class="toRemove">
-	<ul class="toRemove">
-		<li>C# OOP</li>
-		<li>LINQ
+
+	<div class="row toRemove">
+    	<div class="col-md-4 field">
+    		<div class="field">
+	    		<h3>C#</h3>
+
+				<ul>Elementary</ul>
+				<ul>
+					<li>LINQ
+						<ul>
+							<li><a type="button" id="linq_1">LINQ to Objects (1)</a></li>
+							<li>LINQ to Objects (2)</li>
+							<li>Delegates, extension methods</li>
+						</ul>
+					</li>	
+				</ul>
+			</div>	
+		</div>
+	<!--==============================================-->
+    	<div class="col-md-4 field">
+    		<h3>DB</h3>
+
 			<ul>
-				<li><a type="button" id="linq_1">LINQ to Objects (1)</a></li>
-				<li><a type="button" id="linq_2">LINQ to Objects (2)</a></li>
-				<li><a type="button" id="linq_3">Delegates, extension methods</a></li>
-			</ul>
-		</li>
-		<li>SQL</li>
-		<li>UTests</li>
+				<li>SQL</li>
+				<li>SQL Database</li>
+				<li>ADO.NET</li>
+				<li>Entity Framework</li>
+			</ul>	
+		</div>
+	<!--==============================================-->
+    	<div class="col-md-4 field">
+    		<h3>Common</h3>
+
 			<ul>
+				<li>OOP</li>
+				<li>SOLID</li>
+					<ul>
+						<li><a type="button" id="solid_1">SOLID_1</a></li>
+					</ul>
+				<li>Patterns</li>
 				<li><a type="button" id="utest_1">UTests</a></li>
-			</ul>
-	</ul>	
-	<p class="text-center git toRemove">Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+			</ul>	
+		</div>
+	</div>
+
+<!-- 	<p class="text-center git toRemove">Published with <a href="http://pages.github.com">GitHub Pages</a></p> -->
+
     <footer>
         <a href="http://geiko.github.io/" class="button aboutRef">Contact</a>
         <a href="https://www.linkedin.com/in/kostiantyn-geiko-66a967a4" class="button linkedinRef">About</a>
         <button class="btn btn-xs nextTask">Next Task</button>
-        <a href="#" class="button aboutRef">Back</a>
+        <!-- <a href="#" class="button aboutRef">Back</a> -->
+        <a href="#" class="button aboutRef">Sources</a>
         <a href="index.html" class="button aboutRef">Home</a>
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/linq_db_1.js"></script>
-	<script src="js/utest_db_1.js"></script>
-	<script src='js/home.js'></script>
+	<script src="js/linq_1_db.js"></script>
+	<script src="js/utest_1_db.js"></script>
+	<script src="js/solid_1_db.js"></script>
+	<script src='js/HOME.js'></script>
 </body>
 </html>

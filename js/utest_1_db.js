@@ -9,5 +9,13 @@ var utest_1 =
 	{	
 		task : 'task2', 
 		solution : 'solution2'
+	},
+	{	
+		task : 'task3', 
+		solution : 'solution3'
+	},
+	{	
+		task : 'task4', 
+		solution : 'solution4'
 	}
 ];
