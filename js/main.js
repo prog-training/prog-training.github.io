@@ -1,6 +1,6 @@
 'use strict'
 $(document).ready(function(){
-
+	
 	$('#elementary_csharp').click(function(){
 		clickHelper(elementary_csharp, 'Elementary C#');
 	});
@@ -12,6 +12,9 @@ $(document).ready(function(){
 	});
 	$('#sql_2').click(function(){
 		clickHelper(sql_2, 'SQL 2');
+	});
+	$('#sql_3').click(function(){
+		clickHelper(sql_3, 'SQL 3');
 	});
 	$('#sql_db').click(function(){
 		clickHelper(sql_db, 'SQL DB');
@@ -52,6 +55,9 @@ $(document).ready(function(){
 							</div>
 						</div>		
 					</div>
+
+					// <button class="btn btn-default btn-xs" id="taskOrderCoherently"> Ask coherently </button>
+					// <button class="btn btn-default btn-xs" id="taskOrderRandomly"> Ask randomly </button>
 				`;
 				return footer;
 			});

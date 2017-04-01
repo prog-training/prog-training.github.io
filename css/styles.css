@@ -82,3 +82,19 @@ body > footer{
 #question, #challenge, #solution{
 	font-family: "Consolas";
 }
+
+#taskOrderCoherently{
+    position: absolute;
+    top: 45px;
+    left: 90px;
+}
+#taskOrderRandomly{
+    position: absolute;
+    top: 45px;
+    left: 200px;
+}
+#taskOrderCoherently:hover, #taskOrderRandomly:hover{
+    color: white;
+    background-color: #00AABB!important;
+    background-image: none;
+}
