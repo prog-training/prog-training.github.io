@@ -1,8 +1,13 @@
 'use strict'	  
+
+//https://msdn.microsoft.com/ru-ru/magazine/dn683797.aspx
+//https://www.codeproject.com/Articles/703634/SOLID-architecture-principles-using-simple-Csharp
+//http://sergeyteplyakov.blogspot.com/2014/10/solid.html
+
 var solid_1 = 
 [
 	{	
-		task : "What is SOLID?", 			
+		task : "1. What is SOLID?", 			
 		
 		solution : "SOLID - это пять основных принципов объектно-ориентированного программирования и проектирования.\n\n" +
 		"S\tSRP (The Single Responsibility Principle)\n" +

@@ -56,8 +56,8 @@ body > footer{
 /* 	tasks --------------------------------- */
 
 .field{
- /*   border: 1px solid grey;*/
-    padding: 10px 50px;
+    border: 1px solid #dedcdc;
+    padding: 5px 70px 15px 70px;
     background-color: white;
 }
 

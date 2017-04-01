@@ -1,15 +1,29 @@
 'use strict'
 $(document).ready(function(){
 
+	$('#elementary_csharp').click(function(){
+		clickHelper(elementary_csharp, 'Elementary C#');
+	});
 	$('#linq_1').click(function(){
 		clickHelper(linq_1, 'LINQ 1');
+	});
+	$('#sql_1').click(function(){
+		clickHelper(sql_1, 'SQL 1');
+	});
+	$('#sql_2').click(function(){
+		clickHelper(sql_2, 'SQL 2');
+	});
+	$('#sql_db').click(function(){
+		clickHelper(sql_db, 'SQL DB');
+	});
+
+	$('#solid_1').click(function(){
+		clickHelper(solid_1, 'SOLID');
 	});
 	$('#utest_1').click(function(){
 		clickHelper(utest_1, 'UTests');
 	});
-	$('#solid_1').click(function(){
-		clickHelper(solid_1, 'SOLID');
-	});
+	
 	var clickHelper = function(dbName, topicName){
 		$('.toRemove').remove();
 		createNewDoc(topicName);
@@ -53,15 +67,21 @@ $(document).ready(function(){
 
 			var setNextTask = function(event){
 
-				$('#solution').removeClass('show')
-							  .addClass('hidden');
-
 				var tasks = event.data.t;
 				var task_number = event.data.n++ % tasks.length;
-				
+
+				$('#challenge').val('');
+
+								//-----------------------------------
+								// change to show solution-----------
+								// $('#solution').html(tasks[task_number].solution)/////////////////
+								// 			  .removeClass('hidden')
+								// 			  .addClass('show');
+								$('#solution').removeClass('show')
+											  .addClass('hidden');		
+								//-----------------------------------		
+
 				$('#question').html(tasks[task_number].task);
-				// var solution = tasks[task_number].solution ;
-				// console.log(task_number + ' ' + solution);
 
 				var flag = false;
 				$('.showSolution').click(function(){		

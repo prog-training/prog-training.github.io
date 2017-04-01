@@ -2,8 +2,8 @@
 var linq_1 = 
 [
 	{	
-		task : "Выбрать из массива строки, начинающиеся на букву \"F\" и отсортировать полученный список.<br /><br />\n"+
-			"List&ltstring&gt list = new List&ltstring&gt();<br />\n"+
+		task : "1. Выбрать из массива строки, начинающиеся на букву \"F\" и отсортировать полученный список.<br /><br />"+
+			"List&ltstring&gt list = new List&ltstring&gt();<br />"+
             "list.AddRange(new string[] { \"Asya\", \"Fedya\", \"Nikolay\", \"Anna\", \"Frosya\" });", 			
 		
 		solution : "var x = from n in list\n"+
@@ -14,7 +14,7 @@ var linq_1 =
 			"\t.OrderBy(n => n);"
 	},
 	{	
-		task : "Посчитать строки, начинающиеся на букву \"A\", cочетая оба стиля.<br /><br />\n"+
+		task : "2. Посчитать строки, начинающиеся на букву \"A\", cочетая оба стиля.<br /><br />\n"+
 			"List&ltstring&gt list = new List &ltstring&gt ();<br />\n"+
             "list.AddRange(new string[] { \"Asya\", \"Fedya\", \"Nikolay\", \"Anna\", \"Frosya\" });",
 
