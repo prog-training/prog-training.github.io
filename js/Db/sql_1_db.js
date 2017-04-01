@@ -83,10 +83,10 @@ var sql_1 =
 		task : "26. Get the first 50% of the records from the \"Customers\" table.", 
 		solution : "SELECT TOP 50 PERCENT * FROM Customers;"
 	},{	
-		task : 'Get the first three records from the "Customers" table, where the country is "Germany".', 
+		task : '27a. Get the first three records from the "Customers" table, where the country is "Germany".', 
 		solution : "SELECT TOP 3 * FROM Customers\nWHERE Country='Germany';"
 	},{	
-		task : '27. Find the price of the cheapest product.', 
+		task : '27b. Find the price of the cheapest product.', 
 		solution : "SELECT MIN(Price) AS SmallestPrice\nFROM Products;"
 	},{	
 		task : '28. Find the price of the most expensive product.', 
