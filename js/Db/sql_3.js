@@ -7,7 +7,7 @@ var sql_3 =
 		'Table:Orders<br />order_id  customer_id  order_date  amount <br /><br />'+
 		'Write sql query for retrieve all customers that don’t have orders.',
 		
-		solution : "select Customers.name, Customers.name from Customers\nleft join Orders \non Customers.customer_id = Orders.customer_id\nwhere Orders.customer_id is null;"
+		solution : "select Customers.name, Customers.surname, Customers.city from Customers\nleft join Orders \non Customers.customer_id = Orders.customer_id\nwhere Orders.order_id is null;"
 	},{	
 		task : "2. Есть таблица table1 с колонками id и datetime написать запрос который вернет максимальное значение id и значение даты для этого id", 			
 		

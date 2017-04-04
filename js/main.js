@@ -16,10 +16,12 @@ $(document).ready(function(){
 	$('#sql_3').click(function(){
 		clickHelper(sql_3, 'SQL 3');
 	});
-	$('#sql_db').click(function(){
-		clickHelper(sql_db, 'SQL DB');
+	$('#sql_db_1').click(function(){
+		clickHelper(sql_db_1, 'SQL DB 1');
 	});
-
+	$('#sql_db_2').click(function(){
+		clickHelper(sql_db_2, 'SQL DB 2');
+	});
 	$('#solid_1').click(function(){
 		clickHelper(solid_1, 'SOLID');
 	});
@@ -40,8 +42,7 @@ $(document).ready(function(){
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-md-12">
-								<h2 class="text-center">` + topicName + `</h2>
-								<hr>
+								<p class="text-right">` + topicName + `</p>
 							</div>
 						</div>
 						<div class="row">
@@ -50,15 +51,15 @@ $(document).ready(function(){
 								<textarea id="challenge" class="form-control" rows="21" ></textarea>
 							</div>
 							<div class="col-md-6 answer">
-								<button class="btn btn-default btn-xs showSolution">Show solution</button>
-								<textarea id="solution" class="form-control hidden" rows="21"></textarea>
+								<button class="btn btn-default btn-xs showSolution">Solution</button>
+								<textarea id="solution" class="form-control hidden" rows="25"></textarea>
 							</div>
 						</div>		
 					</div>
-
-					// <button class="btn btn-default btn-xs" id="taskOrderCoherently"> Ask coherently </button>
-					// <button class="btn btn-default btn-xs" id="taskOrderRandomly"> Ask randomly </button>
 				`;
+
+					 // <button class="btn btn-default btn-xs" id="taskOrderCoherently"> Ask coherently </button>
+					 // <button class="btn btn-default btn-xs" id="taskOrderRandomly"> Ask randomly </button>
 				return footer;
 			});
 		};
@@ -76,15 +77,16 @@ $(document).ready(function(){
 				var tasks = event.data.t;
 				var task_number = event.data.n++ % tasks.length;
 
+				$('.showSolution').text('Solution');
 				$('#challenge').val('');
 
 								//-----------------------------------
 								// change to show solution-----------
-								// $('#solution').html(tasks[task_number].solution)/////////////////
-								// 			  .removeClass('hidden')
-								// 			  .addClass('show');
-								$('#solution').removeClass('show')
-											  .addClass('hidden');		
+								 //$('#solution').html(tasks[task_number].solution)/////////////////
+								 //			  .removeClass('hidden')
+								 //			  .addClass('show');
+								 $('#solution').removeClass('show')
+								  			   .addClass('hidden');		
 								//-----------------------------------		
 
 				$('#question').html(tasks[task_number].task);
@@ -92,12 +94,12 @@ $(document).ready(function(){
 				var flag = false;
 				$('.showSolution').click(function(){		
 					if(flag){
-						$(this).text('Show Solution');
+						$(this).text('Solution');
 						$('#solution').removeClass('show')
 									  .addClass('hidden');
 					}
 					else{
-						$(this).text('Hide Solution');
+						$(this).text('Hide');
 						$('#solution').html(tasks[task_number].solution)
 									  .removeClass('hidden')
 									  .addClass('show');
