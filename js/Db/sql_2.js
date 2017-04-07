@@ -67,7 +67,7 @@ var sql_2 =
 	},{	
 		task : '68. "Orders" table: </br>OrderID	CustomerID	EmployeeID	OrderDate	ShipperID </br></br>'+
 		'"Customers" table: </br>CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country </br></br>'+
-		'"Shippers" table: </br>CustomerID	ShipperName </br></br>'+
+		'"Shippers" table: </br>ShipperID	ShipperName </br></br>'+
 		'Get all orders with customer and shipper information.',  
 		solution : "SELECT Orders.OrderID, Customers.CustomerName, Shippers.ShipperName \n"+
 		'FROM ((Orders \n'+
