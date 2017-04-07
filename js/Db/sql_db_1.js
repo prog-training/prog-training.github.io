@@ -10,13 +10,13 @@ var sql_db_1 =
 		
 		solution : 'CREATE TABLE Persons (\n    ID int NOT NULL PRIMARY KEY,\n    LastName varchar(255) NOT NULL,\n    FirstName varchar(255),\n    Age int\n);'
 	},{		
-		task : '1b. Naming of a PRIMARY KEY constraint, and for defining a PRIMARY KEY constraint on multiple columns,',			
+		task : '1b. Name a PRIMARY KEY constraint, and define a PRIMARY KEY constraint on multiple columns.',			
 		solution : 'CREATE TABLE Persons (\n    ID int NOT NULL,\n    LastName varchar(255) NOT NULL,\n    FirstName varchar(255),\n    Age int,\n    CONSTRAINT PK_Person PRIMARY KEY (ID,LastName)\n);'
 	},{	
-		task : '1c. Ncreate a PRIMARY KEY constraint on the "ID" column when the table is already created',
+		task : '1c. Create a PRIMARY KEY constraint on the "ID" column when the table is already created',
 		solution : 'ALTER TABLE Persons\nADD PRIMARY KEY (ID);'
 	},{	
-		task : '1d. Naming of a PRIMARY KEY constraint, and for defining a PRIMARY KEY constraint on multiple columns',
+		task : '1d. Name of a PRIMARY KEY constraint, and define a PRIMARY KEY constraint on multiple columns when the table is already created',
 		solution : 'ALTER TABLE Persons\nADD CONSTRAINT PK_Person PRIMARY KEY (ID,LastName);'
 	},{	
 		task : '1f. Drop a PRIMARY KEY constraint',
@@ -32,7 +32,7 @@ var sql_db_1 =
 		task : "2b. Naming of a FOREIGN KEY constraint, and for defining a FOREIGN KEY constraint on multiple columns", 			
 		solution : "CREATE TABLE Orders (\n    OrderID int NOT NULL,\n    OrderNumber int NOT NULL,\n    PersonID int,\n    PRIMARY KEY (OrderID),\n    CONSTRAINT FK_PersonOrder FOREIGN KEY (PersonID)\n    REFERENCES Persons(PersonID)\n);"
 	},{			
-		task : '2c. creCreateate a FOREIGN KEY constraint on the "PersonID" column when the "Orders" table is already created', 			
+		task : '2c. Create a FOREIGN KEY constraint on the "PersonID" column when the "Orders" table is already created', 			
 		solution : "ALTER TABLE Orders \nADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);"
 	},{				
 		task : "2d. Drop a FOREIGN KEY constraint.", 			
@@ -96,7 +96,7 @@ var sql_db_1 =
 		task : '17. Create a UNIQUE constraint on the "ID" column when the table is already created.', 	
 		solution : "ALTER TABLE Persons\nADD UNIQUE (ID);"
 	},{	
-		task : '18. To name a UNIQUE constraint, and to define a UNIQUE constraint on multiple columns', 	
+		task : '18. To name a UNIQUE constraint, and to define a UNIQUE constraint on multiple columns when table has created alredy.', 	
 		solution : "ALTER TABLE Persons\nADD CONSTRAINT UC_Person UNIQUE (ID,LastName);"
 	},{	
 		task : '19. Drop a UNIQUE constraint', 			
@@ -116,7 +116,7 @@ var sql_db_1 =
 		task : '23. Create a CHECK constraint on the "Age" column when the table is already created.', 					
 		solution : "ALTER TABLE Persons \nADD CHECK (Age>=18);"
 	},{	
-		task : '24. Naming of a CHECK constraint, and for defining a CHECK constraint on multiple columns.', 					
+		task : '24. Naming of a CHECK constraint, and for defining a CHECK constraint on multiple columns when table has created alredy.', 					
 		solution : "ALTER TABLE Persons \nADD CONSTRAINT CHK_PersonAge CHECK (Age>=18 AND City='Sandnes');"
 	},{	
 		task : '25. Drop a CHECK constraint', 					
@@ -140,12 +140,11 @@ var sql_db_1 =
 		task : '31. What is INDEX Statement?', 					
 		solution : "The CREATE INDEX statement is used to create indexes in tables."+
 		'\n\nIndexes are used to retrieve data from the database very fast. The users cannot see the indexes, they are just used to speed up searches/queries.'+
-		'\n\nNote: Updating a table with indexes takes more time than updating a table without (because the indexes also need an update). So, only create indexes on columns that will be frequently searched against.'+
-		'\n\nDuplicate values are allowed'
+		'\n\nNote: Updating a table with indexes takes more time than updating a table without (because the indexes also need an update). So, only create indexes on columns that will be frequently searched against.'
 	},{	
 		task : '32. INDEX Syntax', 					
 		solution : "CREATE INDEX index_name \nON table_name (column1, column2, ...);"+
-		'\n\nDuplicate values are allowed'
+		'\n\nDuplicate values are allowed.'
 	},{	
 		task : '33. UNIQUE INDEX Syntax', 					
 		solution : "CREATE UNIQUE INDEX index_name \nON table_name (column1, column2, ...);"+
@@ -160,16 +159,105 @@ var sql_db_1 =
 		task : '36. Delete an index in a table', 					
 		solution : "DROP INDEX table_name.index_name;"
 	},{	
-		task : '', 					
-		solution : ""
+		task : '37. What is INCREMENT Field?', 					
+		solution : 'Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table.'+
+		'\n\nOften this is the primary key field that we would like to be created automatically every time a new record is inserted.'
+	},{	
+		task : '38. Define the "ID" column to be an auto-increment primary key field in the "Persons" table.', 					
+		solution : 'CREATE TABLE Persons ('+
+    	'\n\tID int NOT NULL AUTO_INCREMENT,'+
+    	'\n\tLastName varchar(255) NOT NULL,'+
+    	'\n\tFirstName varchar(255),'+
+    	'\n\tAge int,'+
+    	'\n\tPRIMARY KEY (ID)'+
+		'\n);'
+	},{	
+		task : '39. Let the AUTO_INCREMENT sequence start with value 100.', 					
+		solution : "ALTER TABLE Persons AUTO_INCREMENT=100;"+
+		'\n\nBy default, the starting value for AUTO_INCREMENT is 1.'+
+		'\n\nTo insert a new record into the "Persons" table, we will NOT have to specify a value for the "ID" column (a unique value will be added automatically):'+
+		'\n\nINSERT INTO Persons (FirstName,LastName)'+
+		"\nVALUES ('Lars','Monsen');"
+	},{	
+		task : '40. Define the "ID" column to be an auto-increment primary key field in the "Persons" table.', 					
+		solution : 'CREATE TABLE Persons ('+
+    	'\n\tID int IDENTITY(1,1) PRIMARY KEY,'+
+    	'\n\tLastName varchar(255) NOT NULL,'+
+    	'\n\tFirstName varchar(255),'+
+    	'\n\tAge int'+
+		'\n);'+
+		'The MS SQL Server uses the IDENTITY keyword to perform an auto-increment feature.'+
+		'\n\nIn the example above, the starting value for IDENTITY is 1, and it will increment by 1 for each new record.'+
+		'\n\nTip: To specify that the "ID" column should start at value 10 and increment by 5, change it to IDENTITY(10,5).'+
+		'\n\nTo insert a new record into the "Persons" table, we will NOT have to specify a value for the "ID" column (a unique value will be added automatically):'+
+		'\n\nINSERT INTO Persons (FirstName,LastName)'+
+		"\nVALUES ('Lars','Monsen');"+
+		'\n\nThe SQL statement above would insert a new record into the "Persons" table. The "ID" column would be assigned a unique value. The "FirstName" column would be set to "Lars" and the "LastName" column would be set to "Monsen".'
+	},{	
+		task : '41. What is CREATE  VIEW?', 					
+		solution : 'In SQL, a view is a virtual table based on the result-set of an SQL statement.'+
+		'\n\nA view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.'+
+		'\n\nYou can add SQL functions, WHERE, and JOIN statements to a view and present the data as if the data were coming from one single table.'
+	},{	
+		task : '42. CREATE VIEW Syntax', 					
+		solution : 'CREATE VIEW view_name AS'+
+		'\nSELECT column1, column2, ...'+
+		'\nFROM table_name'+
+		'\nWHERE condition;'+
+		"\n\nNote: A view always shows up-to-date data! The database engine recreates the data, using the view's SQL statement, every time a user queries a view."
+	},{	
+		task : '43. If you have the Northwind database you can see that it has several views installed by default.'+
+		'The view "Current Product List" lists all active products (products that are not discontinued) from the "Products" table. ',
+		solution : 'CREATE VIEW [Current Product List] AS'+
+		'\nSELECT ProductID, ProductName'+
+		'\nFROM Products'+
+		'\nWHERE Discontinued = No;'+
+		'\n\nThen, we can query the view as follows:'+
+		'\n\nSELECT * FROM [Current Product List];'
+	},{	
+		task : '44. Another view in the Northwind sample database selects every product in the "Products" table with a unit price higher than the average unit price:', 					
+		solution : 'CREATE VIEW [Products Above Average Price] AS'+
+		'\nSELECT ProductName, UnitPrice'+
+		'\nFROM Products'+
+		'\nWHERE UnitPrice > (SELECT AVG(UnitPrice) FROM Products);'+
+		'\nWe can query the view above as follows:'+
+		'\nSELECT * FROM [Products Above Average Price];'
+	},{	
+		task : '45. Another view in the Northwind database calculates the total sale for each category in 1997. Note that this view selects its data from another view called "Product Sales for 1997":', 					
+		solution : 'CREATE VIEW [Category Sales For 1997] AS'+
+		'\nSELECT DISTINCT CategoryName, Sum(ProductSales) AS CategorySales'+
+		'\nFROM [Product Sales for 1997]'+
+		'\nGROUP BY CategoryName;'+
+		'\n\nWe can query the view above as follows:'+
+		'\n\nSELECT * FROM [Category Sales For 1997];'+
+		"\n\nWe can also add a condition to the query. Let's see the total sale only for the category 'Beverages':"+
+		'\n\nSELECT * FROM [Category Sales For 1997]'+
+		"\nWHERE CategoryName = 'Beverages';"
+	},{	
+		task : '46. Updating a View Syntax', 					
+		solution : 'CREATE OR REPLACE VIEW view_name AS'+
+		'\nSELECT column1, column2, ...'+
+		'\nFROM table_name'+
+		'\nWHERE condition;'
+	},{	
+		task : '47. Add the "Category" column to the "Current Product List" view.', 					
+		solution : 'CREATE OR REPLACE VIEW [Current Product List] AS'+
+		'\nSELECT ProductID, ProductName, Category'+
+		'\nFROM Products'+
+		'\nWHERE Discontinued = No;'
+	},{	
+		task : '48. Delete a view', 					
+		solution : 'DROP VIEW view_name;'
+	},{	
+		task : '49. What is Injection?', 					
+		solution : 'SQL injection is a code injection technique that might destroy your database.'+
+		'\n\nSQL injection is one of the most common web hacking techniques.'+
+		'\n\nSQL injection is the placement of malicious code in SQL statements, via web page input.'
 	},{	
 		task : '', 					
-		solution : ""
+		solution : ''
 	},{	
 		task : '', 					
-		solution : ""
-	},{	
-		task : '', 					
-		solution : ""
+		solution : ''
 	}
 ]

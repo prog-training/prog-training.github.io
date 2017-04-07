@@ -28,6 +28,9 @@ $(document).ready(function(){
 	$('#utest_1').click(function(){
 		clickHelper(utest_1, 'UTests');
 	});
+	$('#js_1').click(function(){
+		clickHelper(js_1, 'JS 1');
+	});
 	
 	var clickHelper = function(dbName, topicName){
 		$('.toRemove').remove();

@@ -1,4 +1,5 @@
 'use strict'	  
+// https://metanit.com/sharp/tutorial/15.1.php
 var linq_1 = 
 [
 	{	
@@ -31,7 +32,7 @@ var linq_1 =
 		solution : "int x = (from n in list\n"+
 			"\twhere n.StartsWith(\"A\")\n"+
 			"\tselect n)\n"+
-			"\t.Count());"
+			"\t.Count();"
 	},{	
 		task : '4. int[] numbers = { 1, 2, 3, 4, 10, 34, 55, 66, 77, 88 };'+
             '<br/><br/>Выбрать все четные элементы, которые больше 10.',
@@ -67,7 +68,7 @@ var linq_1 =
 
                     '\n\nvar selectedUsers = users.Where(u=> u.Age > 25);'+
 
-                    '\n\n\n2)\nvar selectedUsers = from user in users'+
+                    '\n\n2)\nvar selectedUsers = from user in users'+
                     '\n\tfrom lang in user.Languages'+
                     '\n\twhere user.Age < 28'+
                     '\n\twhere lang == "английский"'+
@@ -76,7 +77,8 @@ var linq_1 =
                     '\n\nvar selectedUsers = users.SelectMany(u => u.Languages,'+
                     '\n\t(u, l) => new { User = u, Lang = l })'+
                     '\n\t.Where(u => u.Lang == "английский" && u.User.Age < 28)'+
-                    '\n\t.Select(u=>u.User);'
+                    '\n\t.Select(u=>u.User);'+
+                    '\n\nМетод SelectMany() в качестве первого параметра принимает поледовательность, которую надо проецировать, а в качестве второго параметра - функцию преобразования, которая применяется к каждому элементу. На выходе она возвращает 8 пар "пользователь - язык" (new { User = u, Lang = l }), к которым потом применяетс фильтр с помощью Where.'
 	},{	
 		task : '6. class User'+
 		'<br/>{'+
