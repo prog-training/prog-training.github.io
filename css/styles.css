@@ -59,7 +59,7 @@ body > footer{
 .field{
     border: 1px solid #dedcdc;
     padding: 5px 50px 15px 50px;
-    background-color: white;
+    background-color: #F9F9F9;
 }
 
 .quiz, .answer{
@@ -82,9 +82,15 @@ body > footer{
 
 #question, #challenge, #solution{
 	font-family: "Consolas";
-    /*background-color: #CEE8E9;*/
-    /*background-color: #F2F2F2;*/
-    F
+}
+
+#challenge, #solution{
+    background-color: #F9F9F9;
+}
+
+#question{
+    /*color: white;*/
+    font-weight: bold;
 }
 
 #taskOrderCoherently{
