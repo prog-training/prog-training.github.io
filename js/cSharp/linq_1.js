@@ -158,9 +158,94 @@ var linq_1 =
              '\n\nТаким образом, при выборке из двух источников каждый элемент из первого источника будет сопоставляться с каждым элементом из второго источника. То есть получиться 4 пары.'
 	},
 	{	
-		task : '',
+		task : '9. Отсортировать набор данных по возрастанию.'+
+		'<br/><br/>int[] numbers = { 3, 12, 4, 10, 34, 20, 55, -66, 77, 88, 4 };',
 
-		solution : ''
+		solution : 
+		'var orderedNumbers = from i in numbers'+
+                     '\n\torderby i'+
+                     '\n\tselect i;'
+	},
+	{	
+		task : '10. Отсортировать Юзеров по именам.'+
+		'<br/><br/>List<User> users = new List<User>()'+
+		'<br/>{'+
+		'<br/> &nbsp&nbsp   new User { Name = "Tom", Age = 33 },'+
+		'<br/> &nbsp&nbsp   new User { Name = "Bob", Age = 30 },'+
+		'<br/> &nbsp&nbsp   new User { Name = "Tom", Age = 21 },'+
+		'<br/> &nbsp&nbsp   new User { Name = "Sam", Age = 43 }'+
+		'};',
+
+		solution : 'var sortedUsers = from u in users'+
+                  '\n\torderby u.Name'+
+                  '\n\tselect u;'+
+                  '\n\nvar sortedUsers = users.OrderBy(u=>u.Name);'
+	},
+	{	
+		task : '11. Отсортировать Юзеров по именам по убыванию.'+
+		'<br/><br/>List<User> users = new List<User>()'+
+		'<br/>{'+
+		'<br/> &nbsp&nbsp   new User { Name = "Tom", Age = 33 },'+
+		'<br/> &nbsp&nbsp   new User { Name = "Bob", Age = 30 },'+
+		'<br/> &nbsp&nbsp   new User { Name = "Tom", Age = 21 },'+
+		'<br/> &nbsp&nbsp   new User { Name = "Sam", Age = 43 }'+
+		'};',
+
+		solution : 'var sortedUsers = from u in users'+
+                  '\n\torderby u.Name descending'+
+                  '\n\tselect u;'+
+                  '\n\nvar sortedUsers = users.OrderByDescending(u=>u.Name);'
+	},
+	{	
+		task : '12. Отсортировать Юзеров по именам, затем по возрасту, затем по длине имени.'+
+		'<br/><br/>List<User> users = new List<User>()'+
+		'<br/>{'+
+		'<br/> &nbsp&nbsp   new User { Name = "Tom", Age = 33 },'+
+		'<br/> &nbsp&nbsp   new User { Name = "Bob", Age = 30 },'+
+		'<br/> &nbsp&nbsp   new User { Name = "Tom", Age = 21 },'+
+		'<br/> &nbsp&nbsp   new User { Name = "Sam", Age = 43 }'+
+		'};',
+
+		solution : 'var sortedUsers = from u in users'+
+                  '\n\torderby user.Name, user.Age, user.Name.Length'+
+                  '\n\tselect u;'+
+                  '\n\nvar result = users.OrderBy(u => u.Name)\n\t.ThenBy(u => u.Age)\n\t.ThenBy(u=>u.Name.Length);'
+	},
+	{	
+		task : '13. Получить разность двух множеств.'+
+		'<br/><br/>string[] soft = { "Microsoft", "Google", "Apple"};'+
+		'<br/>string[] hard = { "Apple", "IBM", "Samsung"};',
+
+		solution : 'var result = soft.Except(hard);'
+	},
+	{	
+		task : '14. Получить пересечение двух множеств.'+
+		'<br/><br/>string[] soft = { "Microsoft", "Google", "Apple"};'+
+		'<br/>string[] hard = { "Apple", "IBM", "Samsung"};',
+
+		solution : 'var result = soft.Intersect(hard);'
+	},
+	{	
+		task : '15. Получить объединенияе двух множеств'+
+		'<br/><br/>string[] soft = { "Microsoft", "Google", "Apple"};'+
+		'<br/>string[] hard = { "Apple", "IBM", "Samsung"};',
+
+		solution : 'var result = soft.Union(hard);'+
+		'\n\nДля объединения двух множеств используется метод Union. Его результатом является новый набор, в котором имеются элементы, как из одного, так и из второго множества. Повторяющиеся элементы добавляются в результат только один раз'
+	},
+	{	
+		task : '16. Получить простое объединение двух наборов'+
+		'<br/><br/>string[] soft = { "Microsoft", "Google", "Apple"};'+
+		'<br/>string[] hard = { "Apple", "IBM", "Samsung"};',
+
+		solution : 'var result = soft.Concat(hard);'+
+		'\n\nТе элементы, которые встречаются в обоих наборах, дублируются.'
+	},
+	{	
+		task : '17. Удалить дубли в наборе.',
+
+		solution : 'var result = soft.Concat(hard).Distinct();'+
+		'\n\nПоследовательное применение методов Concat и Distinct будет подобно действию метода Union.'
 	},
 	{	
 		task : '',
