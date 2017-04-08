@@ -73,7 +73,7 @@ var js_1 =
 	},
 	{	
 		task : '14. Сколько и какие типы данных в JS?', 
-		solution : '6 \nnumber (infinity, NAN) \nstring \nboolean \nnull \nundefined \nobject '
+		solution : '6 \nnumber (infinity, NaN) \nstring \nboolean \nnull \nundefined \nobject '
 	},
 	{	
 		task : '15. Что выведет alert(null instanceof object)?'+
@@ -161,8 +161,12 @@ var js_1 =
 	},
 	{	
 		task : '31. Какие есть способы навешивания обработчиков событий?', 
-		solution : '1) htmlElement.onClick = function(event){...}; \n\n- добавляет только один обработчик.'+
-		'\n\n\n\n2) htmlElement.AddEventListener("click", ... ); \n\n- можно навесить несколько обработчиков, сохраняется их порядок.'+
+		solution : '1) <input value="Нажми меня" onclick="alert("Клик!")" type="button">'+
+		'\n\n<input type="button" onclick="countRabbits()" value="Считать кроликов!"/>'+
+		'\n\nhtmlElement.onClick = function(event){...}; \n\n- добавляет только один обработчик.'+
+
+		'\n\n\n\n2) htmlElement.AddEventListener("click", handler[, phase]); \n\n- можно навесить несколько обработчиков, сохраняется их порядок.'+
+
 		'\n\n\n\n3) htmlElement.attachEvent("on"+имя события, обработчик); \n\n- можно навесить несколько, но не сохраняется порядок обработчиков, нет доступа к элементу на котором сработало событие.'
 	}
 ];

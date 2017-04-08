@@ -133,7 +133,7 @@ var sql_2 =
 		solution : "SELECT COUNT(CustomerID), Country\nFROM Customers\nGROUP BY Country\nORDER BY COUNT(CustomerID) DESC;"
 	},{	
 		task : '81. "Orders" table: </br>OrderID	CustomerID	EmployeeID	OrderDate	ShipperID </br></br>'+
-		'And a selection from the "Shippers" table: </br>ShipperID	ShipperName </br></br>'+
+		'"Shippers" table: </br>ShipperID	ShipperName </br></br>'+
 		'Get the number of orders sent by each shipper', 
 		solution : "SELECT Shippers.ShipperName, COUNT(Orders.OrderID) AS NumberOfOrders \nFROM Orders\nLEFT JOIN Shippers \nON Orders.ShipperID = Shippers.ShipperID\nGROUP BY ShipperName;"
 	},{	
@@ -236,7 +236,7 @@ var sql_2 =
 	},{	
 		task : '102. "Customers" table:<br />CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country<br /><br />'+
 		'"Suppliers" table:<br />SupplierID	SupplierName	ContactName	Address	City	Postal Code	Country<br /><br /><br />'+
-		'Copy only the German suppliers into "Customers', 
+		'Copy only the German suppliers into "Customers"', 
 		solution : "INSERT INTO Customers (CustomerName, City, Country)\nSELECT SupplierName, City, Country FROM Suppliers\nWHERE Country='Germany';"
 	},{	
 		task : '103. Single Line Comments, Multi-line Comments, To ignore just a part of a statement', 

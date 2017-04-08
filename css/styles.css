@@ -1,7 +1,8 @@
 /* 	layout --------------------------------- */
 body{
 	padding: 5px 30px 15px 70px;
-	background-color: #F9F9F9;
+    /*background-color: #F9F9F9;*/
+	background-color: #ADC7C8;
 }
 body > footer{
     position: fixed;
@@ -81,6 +82,9 @@ body > footer{
 
 #question, #challenge, #solution{
 	font-family: "Consolas";
+    /*background-color: #CEE8E9;*/
+    /*background-color: #F2F2F2;*/
+    F
 }
 
 #taskOrderCoherently{
