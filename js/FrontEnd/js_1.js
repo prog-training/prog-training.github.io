@@ -168,5 +168,38 @@ var js_1 =
 		'\n\n\n\n2) htmlElement.AddEventListener("click", handler[, phase]); \n\n- можно навесить несколько обработчиков, сохраняется их порядок.'+
 
 		'\n\n\n\n3) htmlElement.attachEvent("on"+имя события, обработчик); \n\n- можно навесить несколько, но не сохраняется порядок обработчиков, нет доступа к элементу на котором сработало событие.'
+	},
+	{	
+		task :
+		`32. Как в JavaScript вывести на экран число, которое будет меняться, например, 
+		каждую секунду?`, 
+		solution : 
+`x = 1;
+function foo() {
+	document.write('<br/>' + x);
+	x++;
+}
+
+setInterval('foo()', 500);
+
+или
+
+x = 1;
+setInterval(function foo() {
+	document.write('<br/>' + x);
+	x++;
+}, 500);`
+	},
+	{	
+		task :
+``, 
+		solution : 
+``
+	},
+	{	
+		task :
+``, 
+		solution : 
+``
 	}
 ];

@@ -253,7 +253,7 @@ var linq_1 =
 		'<br/><br/>int[] numbers = { 1, 2, 3, 4, 5};',
 
 		solution : 'int query = numbers.Aggregate((x,y)=> x - y);'+
-		'\n\nвначале из первого элемента вычитается второй, потом из получившегося значения вычитается третий и так далее. То есть юудет эквивалентно выражению:'+
+		'\n\nвначале из первого элемента вычитается второй, потом из получившегося значения вычитается третий и так далее. То есть будет эквивалентно выражению:'+
 		'\n\nint query = 1 - 2 - 3 - 4 - 5'+
 		'\n\nВ итоге мы получим число -13.'
 	},
@@ -499,25 +499,25 @@ var linq_1 =
 	{	
 		task : '30. class Player'+
 		'<br/>{'+
-		'<br/>    public string Name { get; set; }'+
-		'<br/>    public string Team { get; set; }'+
+		'<br/><br/>    public string Name { get; set; }'+
+		'<br/><br/>    public string Team { get; set; }'+
 		'<br/>}'+
 		'<br/>class Team'+
 		'<br/>{'+
-		'<br/>    public string Name { get; set; }'+
-		'<br/>    public string Country { get; set; }'+
+		'<br/><br/>    public string Name { get; set; }'+
+		'<br/><br/>    public string Country { get; set; }'+
 		'<br/>}'+
 
 		`<br/><br/>List<Team> teams = new List<Team>()
 		<br/>{
-		<br/>    new Team { Name = "Бавария", Country ="Германия" },
-		<br/>    new Team { Name = "Барселона", Country ="Испания" }
+		<br/><br/>    new Team { Name = "Бавария", Country ="Германия" },
+		<br/><br/>    new Team { Name = "Барселона", Country ="Испания" }
 		<br/>};
 		<br/>List<Player> players = new List<Player>()
 		<br/>{
-		<br/>    new Player {Name="Месси", Team="Барселона"},
-		<br/>    new Player {Name="Неймар", Team="Барселона"},
-		<br/>    new Player {Name="Роббен", Team="Бавария"}
+		<br/><br/>    new Player {Name="Месси", Team="Барселона"},
+		<br/><br/>    new Player {Name="Неймар", Team="Барселона"},
+		<br/><br/>    new Player {Name="Роббен", Team="Бавария"}
 		<br/>};
 
 		<br/><br/>Соединить по общему критерию два набора классов`,
@@ -544,25 +544,25 @@ var result = players.Join(teams,
 	},{	
 		task : '31. class Player'+
 		'<br/>{'+
-		'<br/>    public string Name { get; set; }'+
-		'<br/>    public string Team { get; set; }'+
+		'<br/><br/>    public string Name { get; set; }'+
+		'<br/><br/>    public string Team { get; set; }'+
 		'<br/>}'+
 		'<br/>class Team'+
 		'<br/>{'+
-		'<br/>    public string Name { get; set; }'+
-		'<br/>    public string Country { get; set; }'+
+		'<br/><br/>    public string Name { get; set; }'+
+		'<br/><br/>    public string Country { get; set; }'+
 		'<br/>}'+
 
 		`<br/><br/>List<Team> teams = new List<Team>()
 		<br/>{
-		<br/>    new Team { Name = "Бавария", Country ="Германия" },
-		<br/>    new Team { Name = "Барселона", Country ="Испания" }
+		<br/><br/>    new Team { Name = "Бавария", Country ="Германия" },
+		<br/><br/>    new Team { Name = "Барселона", Country ="Испания" }
 		<br/>};
 		<br/>List<Player> players = new List<Player>()
 		<br/>{
-		<br/>    new Player {Name="Месси", Team="Барселона"},
-		<br/>    new Player {Name="Неймар", Team="Барселона"},
-		<br/>    new Player {Name="Роббен", Team="Бавария"}
+		<br/><br/>   new Player {Name="Месси", Team="Барселона"},
+		<br/><br/>   new Player {Name="Неймар", Team="Барселона"},
+		<br/><br/>    new Player {Name="Роббен", Team="Бавария"}
 		<br/>};
 
 		<br/><br/>Сгуппировать всех игроков по командам.`,
@@ -602,25 +602,25 @@ foreach (var team in result2)
 	},{	
 		task : '32. class Player'+
 		'<br/>{'+
-		'<br/>    public string Name { get; set; }'+
-		'<br/>    public string Team { get; set; }'+
+		'<br/><br/>    public string Name { get; set; }'+
+		'<br/><br/>    public string Team { get; set; }'+
 		'<br/>}'+
 		'<br/>class Team'+
 		'<br/>{'+
-		'<br/>    public string Name { get; set; }'+
-		'<br/>    public string Country { get; set; }'+
+		'<br/><br/>    public string Name { get; set; }'+
+		'<br/><br/>    public string Country { get; set; }'+
 		'<br/>}'+
 
 		`<br/><br/>List<Team> teams = new List<Team>()
 		<br/>{
-		<br/>    new Team { Name = "Бавария", Country ="Германия" },
-		<br/>    new Team { Name = "Барселона", Country ="Испания" }
+		<br/><br/>    new Team { Name = "Бавария", Country ="Германия" },
+		<br/><br/>    new Team { Name = "Барселона", Country ="Испания" }
 		<br/>};
 		<br/>List<Player> players = new List<Player>()
 		<br/>{
-		<br/>    new Player {Name="Месси", Team="Барселона"},
-		<br/>    new Player {Name="Неймар", Team="Барселона"},
-		<br/>    new Player {Name="Роббен", Team="Бавария"}
+		<br/><br/>    new Player {Name="Месси", Team="Барселона"},
+		<br/><br/>    new Player {Name="Неймар", Team="Барселона"},
+		<br/><br/>    new Player {Name="Роббен", Team="Бавария"}
 		<br/>};
 
 		<br/><br/>Объединить две последовательности таким образом, что первый элемент из первой последовательности объединился с первым элементом из второй последовательности, второй элемент из первой последовательности соединился со вторым элементом из второй последовательности и так далее.`,

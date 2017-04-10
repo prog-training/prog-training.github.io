@@ -7,6 +7,9 @@ $(document).ready(function(){
 	$('#linq_1').click(function(){
 		clickHelper(linq_1, 'LINQ 1');
 	});
+	$('#linq_tasks').click(function(){
+		clickHelper(linq_tasks, 'LINQ tasks');
+	});
 	$('#sql_1').click(function(){
 		clickHelper(sql_1, 'SQL 1');
 	});

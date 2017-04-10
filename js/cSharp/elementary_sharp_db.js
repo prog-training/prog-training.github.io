@@ -25,23 +25,45 @@ var elementary_csharp =
 		solution : "Интерфейс содержит только сигнатуры: \n\t- методов, \n\t- свойств, \n\t- событий или \n\t- индексаторов."
 	},
 	{	
-		task : "ааа",
+		task : `4. Создать метод расширения, считающий символы в строке.
+		<br/>
+		<br/>class Program
+	    <br/>{
+	    <br/>&nbsp    public static void Main (string[] args)
+	    <br/>&nbsp    {
+	    <br/>&nbsp&nbsp&nbsp        string t = "test string"; // 11 letters
+	    <br/>&nbsp&nbsp&nbsp        Console.WriteLine(t.countLetter());
+	    <br/>&nbsp    }
+	    <br/>}`,
 
-		solution : "ссс"
+		solution : 
+`using System;
+using System.Linq;
+		
+namespace ExtentionMethod
+{
+	public static class Foo
+	{
+		public static int countLetter( this string str )
+		{
+			return str.Count();   
+		}
+	}
+	
+	public class Program
+	{
+		public static void Main (string[] args) 
+		{ 
+			string t = "test string"; // 11 letters 
+			Console.WriteLine(t.countLetter()); 
+		} 
+	}
+}`
 	},
 	{	
-		task : "ааа",
+		task : ``,
 
-		solution : "ссс"
-	},
-	{	
-		task : "ааа",
-
-		solution : "ссс"
-	},
-	{	
-		task : "ааа",
-
-		solution : "ссс"
+		solution : 
+``
 	}
 ];
