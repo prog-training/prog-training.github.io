@@ -16,8 +16,8 @@ $(document).ready(function(){
 	$('#sql_2').click(function(){
 		clickHelper(sql_2, 'SQL 2');
 	});
-	$('#sql_3').click(function(){
-		clickHelper(sql_3, 'SQL 3');
+	$('#sql_tasks').click(function(){
+		clickHelper(sql_tasks, 'SQL tasks');
 	});
 	$('#sql_db_1').click(function(){
 		clickHelper(sql_db_1, 'SQL DB 1');

@@ -1,6 +1,6 @@
 'use strict'	  
 //https://www.w3schools.com/sql/sql_insert.asp
-var sql_3 = 
+var sql_tasks = 
 [
 	{	
 		task : "1. Table:Customers <br />customer_id  name  surname  city <br /><br />"+
@@ -15,9 +15,20 @@ var sql_3 =
  		"SELECT id,datetime FROM table1 \n"+
 		"where id in (SELECT max(id) FROM table1  ); \n\n"+
 		"можно и так \nSELECT id,datetime FROM table1  \nORDER BY id DESC \nSELECT TOP 1"
-	},{	
-		task : "3", 			
+	},{		
+		task : `4. `, 			
 		
-		solution : "3"
+		solution : 
+		``
+	},{	
+		task : `5. `, 			
+		
+		solution : 
+		``
+	},{	
+		task : `6. `, 			
+		
+		solution : 
+		``
 	}
 ]

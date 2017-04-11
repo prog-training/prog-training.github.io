@@ -27,25 +27,66 @@ var sql_db_2 =
 		'\n\nDurability - Долговечность'+
 		'\n\n\tЭта концепция гарантирует, что если мы получили потверждение о выполнении транзакции, то изменения, вызванные этой транзакцией не должны быть отменены из-за сбоя системы (например, отключение электропитания).'
 	},{		
-		task : "", 		
-		solution : ''
+		task : `4. Как откатить миграцию?`, 			
+		
+		solution : 
+`Step 1: Restore to a previous migration
+
+Use the Get-Migrations command to get a list of the migration names that have been applied to your database.
+
+PM> Get-Migrations
+Retrieving migrations that have been applied to the target database.
+201508242303096_Bad_Migration
+201508211842590_The_Migration_applied_before_it
+201508211440252_And_another
+
+Update-Database –TargetMigration: "<the migration applied before it>"
+
+
+Step 2: Delete your migration from the project
+
+Now you can delete the bad migration from your EF project 'Migrations' folder`
 	},{		
-		task : "", 		
-		solution : ''
+		task : `5. Adding a Property to the Model (EF)
+		<br/>(don't need to drop the database)`, 		
+		solution : 
+`
+  - CTRL-SHIFT-B 
+  - Package Manager Console
+=== add-migration migtationName ===
+    (Visual Studio opens the class file that defines the new DbMIgration )
+  - CTRL-SHIFT-B
+=== update-database ===
+  - Re-run the application`
 	},{		
-		task : "", 		
-		solution : ''
+		task : `6. Setting up Code First Migrations for Model Changes.`, 		
+		solution : 
+`  - remove the database
+  - CTRL-SHIFT-B  
+  - Package Manager Console
+=== Enable-Migrations -ContextTypeName BookArt.Models.SectionDBContext ===
+
+  - Replace the SEED method in the Configuration.cs file
+
+  - CTRL-SHIFT-B 
+=== add-migration Seed1 -verbose ===
+=== update-database ===
+    (If you get an error that indicates a table already exists )`
 	},{		
-		task : "", 		
-		solution : ''
+		task : ``, 		
+		solution : ``
+
 	},{		
-		task : "", 		
-		solution : ''
+		task : ``, 		
+		solution : ``
+
 	},{		
-		task : "", 		
-		solution : ''
+		task : ``, 		
+		solution : ``
+
 	},{		
-		task : "", 		
-		solution : ''
+		task : ``, 		
+		solution : ``
+
 	}
 ]
