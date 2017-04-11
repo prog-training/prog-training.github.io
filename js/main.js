@@ -1,44 +1,54 @@
 'use strict'
 $(document).ready(function(){
 	
+	var questOrder = $("input[name='questionOrder']:checked").val();
+	$("input[name='questionOrderHidden']").val(questOrder);
+	$("input[name='questionOrder']").change(function () {
+		var temp = $("input[name='questionOrder']:checked").val();
+		$("input[name='questionOrderHidden']").val(temp);
+	});
+	var getQuestionOrder = function(){
+		return $("input[name='questionOrderHidden']").val();
+	};
+
 	$('#elementary_csharp').click(function(){
-		clickHelper(elementary_csharp, 'Elementary C#');
+		clickHelper(elementary_csharp, 'Elementary C#', getQuestionOrder());
 	});
 	$('#linq_1').click(function(){
-		clickHelper(linq_1, 'LINQ 1');
+		clickHelper(linq_1, 'LINQ 1', getQuestionOrder());
 	});
 	$('#linq_tasks').click(function(){
-		clickHelper(linq_tasks, 'LINQ tasks');
+		clickHelper(linq_tasks, 'LINQ tasks', getQuestionOrder());
 	});
 	$('#sql_1').click(function(){
-		clickHelper(sql_1, 'SQL 1');
+		clickHelper(sql_1, 'SQL 1', getQuestionOrder());
 	});
 	$('#sql_2').click(function(){
-		clickHelper(sql_2, 'SQL 2');
+		clickHelper(sql_2, 'SQL 2', getQuestionOrder());
 	});
 	$('#sql_tasks').click(function(){
-		clickHelper(sql_tasks, 'SQL tasks');
+		clickHelper(sql_tasks, 'SQL tasks', getQuestionOrder());
 	});
 	$('#sql_db_1').click(function(){
-		clickHelper(sql_db_1, 'SQL DB 1');
+		clickHelper(sql_db_1, 'SQL DB 1', getQuestionOrder());
 	});
 	$('#sql_db_2').click(function(){
-		clickHelper(sql_db_2, 'SQL DB 2');
+		clickHelper(sql_db_2, 'SQL DB 2', getQuestionOrder());
 	});
 	$('#solid_1').click(function(){
-		clickHelper(solid_1, 'SOLID');
+		clickHelper(solid_1, 'SOLID', getQuestionOrder());
 	});
 	$('#utest_1').click(function(){
-		clickHelper(utest_1, 'UTests');
+		clickHelper(utest_1, 'UTests', getQuestionOrder());
 	});
 	$('#js_1').click(function(){
-		clickHelper(js_1, 'JS 1');
+		clickHelper(js_1, 'JS 1', getQuestionOrder());
 	});
 	
-	var clickHelper = function(dbName, topicName){
+	var clickHelper = function(dbName, topicName, questionOrder){
 		$('.toRemove').remove();
 		createNewDoc(topicName);
-		startTraining(dbName);
+		startTraining(dbName, questionOrder);
 		$('.nextTask').css('visibility','visible');
 	};
 	//-----------------------------------------------------
@@ -70,11 +80,13 @@ $(document).ready(function(){
 			});
 		};
 	//-----------------------------------------------------
-		var startTraining = function(tasks){
+		var startTraining = function(tasks, questionOrder){
 
 			var task_number_counter = 0;
 			$('.nextTask').click({n: task_number_counter, t: tasks}, setNextTask);
 			$('.nextTask').click();
+			
+			console.log(questionOrder);/////////////////
 		};
 	//----------------------------------------------------------------------------
 
@@ -88,11 +100,11 @@ $(document).ready(function(){
 
 								//-----------------------------------
 								// change to show solution-----------
-								 $('#solution').html(tasks[task_number].solution)/////////////////
-								 			  .removeClass('hidden')
-								 			  .addClass('show');
-								//$('#solution').removeClass('show')
-								// 			   .addClass('hidden');		
+								// $('#solution').html(tasks[task_number].solution)/////////////////
+								//			  .removeClass('hidden')
+								// 			  .addClass('show');
+								$('#solution').removeClass('show')
+								 			   .addClass('hidden');		
 								//-----------------------------------		
 
 				$('#question').html(tasks[task_number].task);
