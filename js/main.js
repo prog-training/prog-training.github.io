@@ -11,6 +11,7 @@ $(document).ready(function(){
 		return $("input[name='questionOrderHidden']").val();
 	};
 
+	//---------------------------
 	$('#elementary_csharp').click(function(){
 		clickHelper(elementary_csharp, 'Elementary C#', getQuestionOrder());
 	});
@@ -20,6 +21,7 @@ $(document).ready(function(){
 	$('#linq_tasks').click(function(){
 		clickHelper(linq_tasks, 'LINQ tasks', getQuestionOrder());
 	});
+	//---------------------------
 	$('#sql_1').click(function(){
 		clickHelper(sql_1, 'SQL 1', getQuestionOrder());
 	});
@@ -35,15 +37,24 @@ $(document).ready(function(){
 	$('#sql_db_2').click(function(){
 		clickHelper(sql_db_2, 'SQL DB 2', getQuestionOrder());
 	});
+	//---------------------------
 	$('#solid_1').click(function(){
 		clickHelper(solid_1, 'SOLID', getQuestionOrder());
 	});
 	$('#utest_1').click(function(){
 		clickHelper(utest_1, 'UTests', getQuestionOrder());
 	});
+	$('#npm').click(function(){
+		clickHelper(npm, 'npm', getQuestionOrder());
+	});
+	//---------------------------
 	$('#js_1').click(function(){
 		clickHelper(js_1, 'JS 1', getQuestionOrder());
 	});
+	$('#angular_1').click(function(){
+		clickHelper(angular_1, 'Angular 1', getQuestionOrder());
+	});
+	//---------------------------
 	
 	var clickHelper = function(dbName, topicName, questionOrder){
 		$('.toRemove').remove();
