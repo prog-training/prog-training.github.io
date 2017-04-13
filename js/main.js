@@ -44,6 +44,9 @@ $(document).ready(function(){
 	$('#utest_1').click(function(){
 		clickHelper(utest_1, 'UTests', getQuestionOrder());
 	});
+	$('#cmd').click(function(){
+		clickHelper(cmd, 'cmd', getQuestionOrder());
+	});
 	$('#npm').click(function(){
 		clickHelper(npm, 'npm', getQuestionOrder());
 	});
