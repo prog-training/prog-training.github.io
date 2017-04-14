@@ -1,5 +1,6 @@
 'use strict'
 //http://www.cs.princeton.edu/courses/archive/spr05/cos126/cmd-prompt.html
+//https://www.youtube.com/watch?v=MBBWVgE0ewk
 var cmd = 
 [
 	{	
@@ -75,7 +76,7 @@ dir`
 	},
 	{	
 		task : 
-`9. create a new directory called loops, 
+`9. Create a new directory called loops, 
 and copy all of the files in the hello directory 
 <br/>C:\\introcs\\hello\\
 <br/>into this newly created directory type:  
@@ -89,19 +90,19 @@ dir`
 	},
 	{	
 		task : 
-`10.  
+`10. Take me to the parent directory
 <br/>C:\\>`,
 
 		solution : 
-``
+`cd ..`
 	},
 	{	
 		task : 
-`11.  
+`11. Go up two steps
 <br/>C:\\>`,
 
 		solution : 
-``
+`cd ../..`
 	},
 	{	
 		task : 
