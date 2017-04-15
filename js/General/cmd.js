@@ -106,7 +106,115 @@ dir`
 	},
 	{	
 		task : 
-`12.  
+`12.  Clone Clone a remote repository onto your local machine (current directory)
+<br/>C:\\>`,
+
+		solution : 
+`git clone ...
+
+git clone --depth=16 https://github.com/angular/angular-phonecat.git
+
+The --depth=16 option tells Git to pull down only the last 16 commits. This makes the download much smaller and faster.`
+	},
+	{	
+		task : 
+`13. Check out a particular branch or a tagged version of the code to hack on.
+<br/>C:\\>`,
+
+		solution : 
+`git checkout ...`
+	},
+	{	
+		task : 
+`14. Check the version of Node.js that you have installed
+<br/>C:\\>`,
+
+		solution : 
+`node --version`
+	},
+	{	
+		task : 
+`15. Download the tool dependencies
+<br/>C:\\>`,
+
+		solution : 
+`npm install`
+	},
+	{	
+		task : 
+`16. What file contains tools (dependencies)?`,
+
+		solution : 
+`package.json`
+	},
+	{	
+		task : 
+`17. How to I change disk drive in command prompt
+<br/>C:\\>`,
+
+		solution : 
+`d:`
+	},
+	{	
+		task : 
+`18. Which tools (dependencies) are download?`,
+
+		solution : 
+`Bower - client-side code package manager
+Http-Server - simple local static web server
+Karma - unit test runner
+Protractor - end-to-end (E2E) test runner`
+	},
+	{	
+		task : 
+`19. In which directory tools (dependencies) are settled?
+<br/>C:\\>`,
+
+		solution : 
+`the node_modules directory`
+	},
+	{	
+		task : 
+`20. How stop server?
+<br/>C:\\>`,
+
+		solution : 
+`ctrl-C`
+	},
+	{	
+		task : 
+`21. What is Karma?`,
+
+		solution : 
+`Unit test runner.`
+	},
+	{	
+		task : 
+`22. What is Protractor?`,
+
+		solution : 
+`end-to-end (E2E) test runner.`
+	},
+	{	
+		task : 
+`23. Run the unit tests for the application.`,
+
+		solution : 
+`npm test`	
+	},
+	{	
+		task : 
+`24. Running E2E Tests
+<br/>C:\\>`,
+
+		solution : 
+`npm run update-webdriver
+npm start
+npm run protractor`
+	},
+	{	
+		task : 
+`25. 
 <br/>C:\\>`,
 
 		solution : 
@@ -114,7 +222,7 @@ dir`
 	},
 	{	
 		task : 
-`13. 
+`26. 
 <br/>C:\\>`,
 
 		solution : 
@@ -122,7 +230,7 @@ dir`
 	},
 	{	
 		task : 
-`14. 
+`27. 
 <br/>C:\\>`,
 
 		solution : 
