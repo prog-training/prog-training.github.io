@@ -106,7 +106,7 @@ dir`
 	},
 	{	
 		task : 
-`12.  Clone Clone a remote repository onto your local machine (current directory)
+`12.  Clone a remote repository onto your local machine (current directory)
 <br/>C:\\>`,
 
 		solution : 
@@ -149,7 +149,7 @@ The --depth=16 option tells Git to pull down only the last 16 commits. This make
 	},
 	{	
 		task : 
-`17. How to I change disk drive in command prompt
+`17. How can I change disk drive in command prompt
 <br/>C:\\>`,
 
 		solution : 
@@ -214,19 +214,19 @@ npm run protractor`
 	},
 	{	
 		task : 
-`25. 
-<br/>C:\\>`,
+`25. Что такое npm?`,
 
 		solution : 
-``
+`npm — это пакетный менеджер node.js. 
+\n\nС его помощью можно управлять модулями и зависимостями.`
 	},
 	{	
 		task : 
-`26. 
-<br/>C:\\>`,
+`26. Что такое Node.js?`,
 
 		solution : 
-``
+`В двух словах — Node.js это интерпретатор языка JavaScript. 
+\n\nСам по себе Node.js является C++ приложением, которое получает на входе JavaScript-код и выполняет его.`
 	},
 	{	
 		task : 
