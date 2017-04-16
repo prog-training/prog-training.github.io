@@ -65,13 +65,13 @@ solution :
 },
 {	
 task : 
-`7. Write directive, called ngController, which attaches a PhoneListController controller to the <body> tag`,
+`7. Write directive, called ngController, which attaches a PhoneListController controller to the &ltbody&gt tag`,
 solution : 
 `&ltbody ng-controller="PhoneListController"&gt`
 },
 {	
 task : 
-`8. What is comtroller?`,
+`8. What is controller?`,
 solution : 
 `Controller is in charge of the DOM sub-tree under (and including) the <body> element.
 
@@ -157,37 +157,246 @@ solution :
 },
 {	
 task : 
-`17. `,
+`17. What is component?`,
 solution : 
-``
+`AngularJS will create a so called isolate scope for each instance of our component.
+
+So, components are reusable and isolated entities.`
 },
 {	
 task : 
-`18. `,
+`18. Create a component Hello world!`,
 solution : 
-``
+`angular.
+  module('myApp').
+  component('greetUser', {
+    template: 'Hello, {{$ctrl.user}}!',
+    controller: function GreetUserController() {
+      this.user = 'world';
+    }
+  });
+
+  It is considered a good practice to avoid using the scope directly.
+  From the template, we can refer to our controller instance using an alias. 
+  This way, the context of evaluation for our expressions is even more clear. 
+  By default, components use $ctrl as the controller alias, but we can override it, should the need arise.`
 },
 {	
 task : 
-`19. `,
+`19. What are needed to create a component?`,
 solution : 
-``
+`To create a component, we use the .component() method of an AngularJS module. 
+
+We must provide the name of the component 
+and 
+the Component Definition Object (CDO for short).
+
+Remember that (since components are also directives) the name of the component is in camelCase (e.g. myAwesomeComponent), but we will use kebab-case (e.g. my-awesome-component) when referring to it in our HTML.
+
+In its simplest form, the CDO will just contain a template and a controller. 
+(We can actually omit the controller and AngularJS will create a dummy controller for us. 
+This is useful for simple "presentational" components, that don't attach any behavior to the template.)
+
+Definition of a someComponent component would be in a file named some-component.component.js.`
 },
 {	
 task : 
-`16. `,
+`20. Use a custom component phoneList in index.html to render a list of phones`,
+solution : 
+`&ltphone-list&gt&lt/phone-list&gt`
+},
+{ 
+task : 
+`21.  Register 'phoneList' component, along with its associated controller and template`,
+solution : 
+`'use strict';
+angular.
+  module('phonecatApp').
+  component('phoneList', {
+    template:
+        ... $ctrl.phones ...
+    controller: function PhoneListController() {
+      this.phones = [
+        ...
+      ];
+    }
+  });`
+},
+{ 
+task : 
+`22. Now add binding (Total number of phone) to the phoneList component's template`,
+solution : 
+`'<p>Total number of phones: {{$ctrl.phones.length}}</p>' `
+},
+{ 
+task : 
+`23. Directory and File Organization`,
+solution : 
+`Group our files into directories by feature.
+
+Each feature/section should declare its own module and all related entities should register themselves on that module.`
+},
+{ 
+task : 
+`24. Final Directory/File Layout`,
+solution : 
+`app/
+  phone-list/
+    phone-list.component.js
+    phone-list.component.spec.js
+    phone-list.module.js
+    phone-list.template.html
+  app.css
+  app.module.js
+  index.html`
+},
+{ 
+task : 
+`25. Add filter for phones.
+
+<ul class="phones">
+  <li ng-repeat="phone in $ctrl.phones">
+    <span>{{phone.name}}</span>
+    <p>{{phone.snippet}}</p>
+  </li>
+</ul>`,
+solution : 
+`Search: <input ng-model="$ctrl.query" />
+
+<ul class="phones">
+  <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query">
+    <span>{{phone.name}}</span>
+    <p>{{phone.snippet}}</p>
+  </li>
+</ul>
+
+We added a standard HTML <input> tag and used AngularJS's filter function to process the input for the ngRepeat directive.
+
+The ngModel directive, this lets a user enter search criteria and immediately see the effects of their search on the phone list. `
+},
+{ 
+task : 
+`26. Add select to control order of phone list.
+
+Search: <input ng-model="$ctrl.query" />
+
+<ul class="phones">
+  <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query">
+    <span>{{phone.name}}</span>
+    <p>{{phone.snippet}}</p>
+  </li>
+</ul>`,
+solution : 
+`  Search:
+  <input ng-model="$ctrl.query">
+
+<p>
+  Sort by:
+  <select ng-model="$ctrl.orderProp">
+    <option value="name">Alphabetical</option>
+    <option value="age">Newest</option>
+  </select>
+</p>
+
+<ul class="phones">
+  <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+    <span>{{phone.name}}</span>
+    <p>{{phone.snippet}}</p>
+  </li>
+</ul>
+
+Controller:
+angular.
+  module('phoneList').
+  component('phoneList', {
+    templateUrl: 'phone-list/phone-list.template.html',
+    controller: function PhoneListController() {
+      this.phones = [
+        {
+          name: 'Nexus S',
+          snippet: 'Fast just got faster with Nexus S.',
+          age: 1
+        }, {
+          name: 'Motorola XOOM™ with Wi-Fi',
+          snippet: 'The Next, Next Generation tablet.',
+          age: 2
+        }, {
+          name: 'MOTOROLA XOOM™',
+          snippet: 'The Next, Next Generation tablet.',
+          age: 3
+        }
+      ];
+
+      this.orderProp = 'age';
+    }
+  });
+
+  We added a line to the controller that sets the default value of orderProp to age. 
+  If we had not set a default value here, the orderBy filter would remain uninitialized until the user picked an option from the drop-down menu.`
+},
+{ 
+task : 
+`27. Use AngularJS's $http service in our controller for making an HTTP request to our web server to fetch the data in the app/phones/phones.json file.`,
+solution : 
+`Services are managed by AngularJS's DI subsystem. 
+
+angular.
+  module('phoneList').
+  component('phoneList', {
+    templateUrl: 'phone-list/phone-list.template.html',
+    controller: function PhoneListController($http) {
+      var self = this;
+      self.orderProp = 'age';
+
+      $http.get('phones/phones.json').then(function(response) {
+        self.phones = response.data;
+      });
+    }
+  });
+
+  $http makes an HTTP GET request to our web server, asking for phones.json (the URL is relative to our index.html file).
+
+  The $http service returns a promise object, which has a then() method. 
+  We call this method to handle the asynchronous response and assign the phone data to the controller, as a property called phones. 
+  Notice that AngularJS detected the JSON response and parsed it for us into the data property of the response object passed to our callback!
+
+  Since we are making the assignment of the phones property in a callback function, where the this value is not defined, we also introduce a local variable called self that points back to the controller instance.`
+},
+{ 
+task : 
+`28. What do you need to use a service?`,
+solution : 
+`To use a service in AngularJS, you simply declare the names of the dependencies you need as arguments to the controller's constructor function, as follows:
+
+function PhoneListController($http) {...}
+
+AngularJS's dependency injector provides services to your controller, when the controller is being constructed.
+
+You can create your own services, and in fact we will do exactly that a few steps down the road. 
+As a naming convention, AngularJS's built-in services, Scope methods and a few other AngularJS APIs have a $ prefix in front of the name.
+To prevent collisions it's best to avoid naming your services and models anything that begins with a $.`
+},
+{ 
+task : 
+`29. In the PhoneListController controller, pre-process the HTTP response by limiting the number of phones to the first 5 in the list.`,
+solution : 
+`self.phones = response.data.slice(0, 5);`
+},
+{ 
+task : 
+`30. `,
 solution : 
 ``
 },
-{	
+{ 
 task : 
-`20. `,
+`31. `,
 solution : 
 ``
 },
-{	
+{ 
 task : 
-`21. `,
+`32. `,
 solution : 
 ``
 }
