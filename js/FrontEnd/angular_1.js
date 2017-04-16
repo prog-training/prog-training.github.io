@@ -94,7 +94,7 @@ solution :
 },
 {	
 task : 
-`11. Define the `PhoneListController` controller on the `phonecatApp` module`,
+`11. Define the 'PhoneListController' controller on the 'phonecatApp' module`,
 solution : 
 `phonecatApp.controller('PhoneListController', function PhoneListController($scope) {
   $scope.phones = [
