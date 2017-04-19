@@ -211,29 +211,5 @@ Protractor - end-to-end (E2E) test runner`
 `npm run update-webdriver
 npm start
 npm run protractor`
-	},
-	{	
-		task : 
-`25. Что такое npm?`,
-
-		solution : 
-`npm — это пакетный менеджер node.js. 
-\n\nС его помощью можно управлять модулями и зависимостями.`
-	},
-	{	
-		task : 
-`26. Что такое Node.js?`,
-
-		solution : 
-`В двух словах — Node.js это интерпретатор языка JavaScript. 
-\n\nСам по себе Node.js является C++ приложением, которое получает на входе JavaScript-код и выполняет его.`
-	},
-	{	
-		task : 
-`27. 
-<br/>C:\\>`,
-
-		solution : 
-``
 	}
 ];

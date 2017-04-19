@@ -50,6 +50,21 @@ $(document).ready(function(){
 	$('#npm').click(function(){
 		clickHelper(npm, 'npm', getQuestionOrder());
 	});
+	$('#Bower').click(function(){
+		clickHelper(Bower, 'Bower', getQuestionOrder());
+	});
+	$('#OWIN').click(function(){
+		clickHelper(OWIN, 'OWIN', getQuestionOrder());
+	});
+	$('#webpack').click(function(){
+		clickHelper(webpack, 'webpack', getQuestionOrder());
+	});
+	$('#swagger').click(function(){
+		clickHelper(swagger, 'swagger', getQuestionOrder());
+	});
+	$('#REST').click(function(){
+		clickHelper(REST, 'REST', getQuestionOrder());
+	});
 	//---------------------------
 	$('#js_1').click(function(){
 		clickHelper(js_1, 'JS 1', getQuestionOrder());
@@ -114,11 +129,11 @@ $(document).ready(function(){
 
 								//-----------------------------------
 								// change to show solution-----------
-								// $('#solution').html(tasks[task_number].solution)/////////////////
-								//			  .removeClass('hidden')
-								// 			  .addClass('show');
-								$('#solution').removeClass('show')
-								 			   .addClass('hidden');		
+								 $('#solution').html(tasks[task_number].solution)/////////////////
+											  .removeClass('hidden')
+								 			  .addClass('show');
+								//$('#solution').removeClass('show')
+								// 			   .addClass('hidden');		
 								//-----------------------------------		
 
 				$('#question').html(tasks[task_number].task);
