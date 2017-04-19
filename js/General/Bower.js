@@ -7,6 +7,6 @@ var Bower =
 `1. What is Bower?`,
 
 		solution : 
-Bower - client-side code package manager (for Angular)``
+`Bower - client-side code package manager (for Angular)`
 	}
 ];
