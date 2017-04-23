@@ -65,6 +65,9 @@ $(document).ready(function(){
 	$('#REST').click(function(){
 		clickHelper(REST, 'REST', getQuestionOrder());
 	});
+	$('#WebApi').click(function(){
+		clickHelper(WebApi, 'WebApi', getQuestionOrder());
+	});
 	//---------------------------
 	$('#js_1').click(function(){
 		clickHelper(js_1, 'JS 1', getQuestionOrder());
