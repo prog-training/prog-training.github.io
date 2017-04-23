@@ -132,11 +132,11 @@ $(document).ready(function(){
 
 								//-----------------------------------
 								// change to show solution-----------
-								 $('#solution').html(tasks[task_number].solution)/////////////////
-											  .removeClass('hidden')
-								 			  .addClass('show');
-								//$('#solution').removeClass('show')
-								// 			   .addClass('hidden');		
+								// $('#solution').html(tasks[task_number].solution)/////////////////
+								//			  .removeClass('hidden')
+								// 			  .addClass('show');
+								$('#solution').removeClass('show')
+								 			   .addClass('hidden');		
 								//-----------------------------------		
 
 				$('#question').html(tasks[task_number].task);
