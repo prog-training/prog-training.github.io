@@ -115,7 +115,7 @@ $(document).ready(function(){
 		var startTraining = function(tasks, questionOrder){
 
 			var task_number_counter = 0;
-			$('.nextTask').click({n: task_number_counter, t: tasks}, setNextTask);
+			$('.nextTask').click({n: task_number_counter, t: tasks, qo: questionOrder}, setNextTask);
 			$('.nextTask').click();
 			
 			console.log(questionOrder);/////////////////
@@ -125,14 +125,22 @@ $(document).ready(function(){
 			var setNextTask = function(event){
 
 				var tasks = event.data.t;
-				var task_number = event.data.n++ % tasks.length;
+				var questionOrder = event.data.qo;
+
+				var task_number;
+				if(questionOrder === 'coherently'){
+					task_number = event.data.n++ % tasks.length;
+				}
+				if(questionOrder === 'randomly'){
+					task_number = Math.floor((Math.random() * (tasks.length - 1)) + 0);;
+				}
 
 				$('.showSolution').text('Solution');
 				$('#challenge').val('');
 
 								//-----------------------------------
-								// change to show solution-----------
-								// $('#solution').html(tasks[task_number].solution)/////////////////
+								// change to show solution
+								// $('#solution').html(tasks[task_number].solution)
 								//			  .removeClass('hidden')
 								// 			  .addClass('show');
 								$('#solution').removeClass('show')
