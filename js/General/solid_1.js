@@ -11,21 +11,21 @@ var solid_1 =
 		
 		solution : "SOLID - это пять основных принципов объектно-ориентированного программирования и проектирования.\n\n" +
 
-		"S\t The Single Responsibility \n" +
+		"S\t The Single Responsibility \n\n" +		
 		"\t A class should have only a single responsibility \n" +
 		"\t (i.e. changes to only one part of the software's specification \n" +
 		"\t should be able to affect the specification of the class) \n\n" +
 		"\t Принцип единственной ответственности.\n" +
 		"\t Существует лишь одна причина, приводящая к появлению класса.\n\n" +
 
-		"O\t The Open Closed \n" +
+		"O\t The Open Closed \n\n" +
 		"\t “software entities … should be open for extension,\n" +
 		"\t but closed for modification.”\n\n" +
 		"\t Принцип открытости/закрытости.\n" +
 		"\t «программные сущности … должны быть открыты для расширения,\n" +
 		"\t но закрыты для модификации.»\n\n" +
 		
-		"L\t The Liskov Substitution \n" +  
+		"L\t The Liskov Substitution \n\n" +  
 		"\t “Objects in a program should be replaceable with \n" +
 		"\t instances of their subtypes without \n" +
 		"\t altering the correctness of that program.”\n\n" +
@@ -34,7 +34,7 @@ var solid_1 =
 		"\t на экземпляры их подтипов\n" +
 		"\t без изменения правильности выполнения программы.»\n\n" +
 
-		"I\t The Interface Segregation \n" +
+		"I\t The Interface Segregation \n\n" +
 		"\t “Many client-specific interfaces are better \n" +
 		"\t than one general-purpose interface.”\n\n" +
 		"\t Принцип разделения интерфейса.\n" +
@@ -42,7 +42,7 @@ var solid_1 =
 		"\t специально предназначенных для клиентов, лучше,\n" +
 		"\t чем один интерфейс общего назначения.»\n\n" +
 
-		"D\t The Dependency Inversion \n" +
+		"D\t The Dependency Inversion \n\n" +
 		"\t One should “depend upon abstractions, not concretions.”\n\n" +
 		"\t Принцип инверсии зависимостей.\n" +
 		"\t «Зависимость на Абстракциях.\n" +
