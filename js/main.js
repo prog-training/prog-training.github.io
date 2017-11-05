@@ -38,7 +38,7 @@ $(document).ready(function(){
 		clickHelper(sql_db_2, 'SQL DB 2', getQuestionOrder());
 	});
 	//---------------------------
-	$('#solid_1').click(function(){
+	$('#solid').click(function(){
 		clickHelper(solid_1, 'SOLID', getQuestionOrder());
 	});
 	$('#utest_1').click(function(){
